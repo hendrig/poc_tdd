@@ -1,8 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+describe("Tela Principal (App)", () => {
+  describe("Render", () =>{
+    it("Deve mostrar o botão de adicionar pontuação", () => {
+      render(<App />);
+      const botaoAdicionarPontuacao = screen.getByText("Adicionar Pontuação")
+      expect(botaoAdicionarPontuacao).toBeInTheDocument()
+    })
+  })
+})
